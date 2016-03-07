@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<?php
+$example = 'example';
+$wellArray = array (
+'Arrays are a lot of fun.',
+'Bootstrap is an amazing development tool to use with PHP',
+'With bootstrap you can quickly code and design beautiful websites'
+);
+?>
+
+<html lang="en">
+  <head>
+  	<head>
+		
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Mobile Automation">
+    <meta name="author" content="Allen">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Mobile Automation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript" src="js/envTable.js"></script>
+
+  </head>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Mobile Automation Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="qa/qa_login.html">QA Environment</a></li>
+            <li><a href="ftpviews/ftpsources.html">Videos</a></li>
+            <li><a href="grid/downloads.html">Downloads</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+			<li><a href="iframe/arp.html">ARP</a></li>
+            <li><a href="resources/resourcespage.htm">Resources</a></li>
+            <li><a href="test/test.html">Demo</a></li>
+            <li><a href="iframe/jenkins.html">Jenkins</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Confluence</a></li>
+            <li><a href="">Reference</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Environments Dashboard</h1>
+
+          <div class="row placeholders">
+          	<div class="col-xs-6 col-sm-3 placeholder">
+              <img src="resources/successfactors2.0.gif" class="img-responsive" alt="Generic placeholder thumbnail">
+              
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+            	<button type="button" class="btn btn-primary  id="patchTable_id" onClick="showPatchTable()">QAPatch</button>
+            	<button type="button" class="btn btn-success  id="candTable_id" onClick="showCandTable()">QACand</button>
+            	<button type="button" class="btn btn-warning  id="previewTable_id" onClick="showPreviewTable()">QAPatchPreview</button>
+            	<button type="button" class="btn btn-danger  id="rotTable_id" onClick="showRotTable()">QAAutocandRot</button>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+            	<button type="button" class="btn btn-info" id="productionTable_id" onClick="showPduTable()">Procution ENV</button>
+            	
+            </div>
+          </div>
+
+          <h2 class="sub-header">Instance Info</h2>
+          <div class="table-responsive">
+            <table class="table table-striped" >
+              <thead >
+                <tr >
+                	<th>DC</th>
+                  <th>Company</th>
+                  <th>User</th>
+                  <th>Password</th>
+                  <th>BizX URL</th>
+                  <th>MP</th>
+                  <th>Direct URL</th>
+                </tr>
+              </thead>
+              <tbody id="tblPdu" style=display:>
+                <tr>
+                	<td><span class="label label-success">DC2</span></td>
+                  <td><span class="label label-info">QAATMBEU</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://performancemanager.successfactors.eu/login?company=QAATMBEU" target="_blank"><span class="label label-primary">https://performancemanager.successfactors.eu/login</span></a></td>
+                  <td><span class="label label-success">DC2</span></td>
+                  <td><a href="https://performancemanager.successfactors.eu/login?company=QAATMBEU&username=cgrant&password=pwd1" target="_blank">https://performancemanager.successfactors.eu/login?company=QAATMBEU&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC2 SalesDemo</span></td>
+                  <td><span class="label label-info">QAATMBEUSD</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://salesdemo.successfactors.eu/login?company=QAATMBEUSD" target="_blank"><span class="label label-primary">https://salesdemo.successfactors.eu/login</span></a></td>
+                  <td><span class="label label-success">DC2SD</span></td>
+                  <td><a href="https://performancemanager.successfactors.eu/login?company=QAATMBEU&username=cgrant&password=pwd1" target="_blank">https://salesdemo.successfactors.eu/login?company=QAATMBEUSD&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC2 Test</span></td>
+                  <td><span class="label label-info">QAATMBEUTEST</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://hcm2preview.sapsf.eu/login?company=QAATMBEUTEST" target="_blank"><span class="label label-primary">https://hcm2preview.sapsf.eu/login</span></a></td>
+                  <td><span class="label label-success">DC2TEST</span></td>
+                  <td><a href="https://hcm2preview.sapsf.eu/login?company=QAATMBEUTEST&username=cgrant&password=pwd1" target="_blank">https://hcm2preview.sapsf.eu/login?company=QAATMBEUTEST&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC4</span></td>
+                  <td><span class="label label-info">QAATMBPM4</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://performancemanager4.successfactors.com/login?company=QAATMBPM4" target="_blank"><span class="label label-primary">https://performancemanager4.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">DC4</span></td>
+                  <td><a href="https://performancemanager4.successfactors.com/login?company=QAATMBPM4&username=cgrant&password=pwd1" target="_blank">https://performancemanager4.successfactors.com/login?company=QAATMBPM4&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC4 SalesDemo</span></td>
+                  <td><span class="label label-info">QAATMBSDPM4</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">value</span></td>
+                  <td><a href="https://salesdemo4.successfactors.com/login?company=QAATMBSDPM4" target="_blank"><span class="label label-primary">https://salesdemo4.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">DC4SD</span></td>
+                  <td><a href="https://salesdemo4.successfactors.com/login?company=QAATMBSDPM4&username=cgrant&password=value" target="_blank">https://salesdemo4.successfactors.com/login?company=QAATMBSDPM4&username=cgrant&password=value</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC4 Preview</span></td>
+                  <td><span class="label label-info">QAATMBPM4PRE</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://hcm4preview.sapsf.com/login?company=QAATMBPM4PRE" target="_blank"><span class="label label-primary">https://hcm4preview.sapsf.com/login</span></a></td>
+                  <td><span class="label label-success">DC2</span></td>
+                  <td><a href="https://hcm4preview.sapsf.com/login?company=QAATMBPM4PRE&username=cgrant&password=pwd1" target="_blank">https://hcm4preview.sapsf.com/login?company=QAATMBPM4PRE&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC8</span></td>
+                  <td><span class="label label-info">QAATMBPM8</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://performancemanager8.successfactors.com/login?company=QAATMBPM8" target="_blank"><span class="label label-primary">https://performancemanager8.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">DC2</span></td>
+                  <td><a href="https://performancemanager8.successfactors.com/login?company=QAATMBPM8&username=cgrant&password=pwd1" target="_blank">https://performancemanager8.successfactors.com/login?company=QAATMBPM8&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC8 SalesDemo</span></td>
+                  <td><span class="label label-info">QAATMBSDPM8</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://pmsalesdemo8.successfactors.com/login?company=QAATMBSDPM8" target="_blank"><span class="label label-primary">https://pmsalesdemo8.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">MSD8</span></td>
+                  <td><a href="https://pmsalesdemo8.successfactors.com/login?company=QAATMBSDPM8&username=cgrant&password=pwd" target="_blank">https://pmsalesdemo8.successfactors.com/login?company=QAATMBSDPM8&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC8 Test</span></td>
+                  <td><span class="label label-info">QAATMBPM8TEST</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://hcm8preview.sapsf.com/login?company=QAATMBPM8TEST" target="_blank"><span class="label label-primary">https://hcm8preview.sapsf.com/login</span></a></td>
+                  <td><span class="label label-success">DC8TEST</span></td>
+                  <td><a href="https://hcm8preview.sapsf.com/login?company=QAATMBPM8TEST&username=cgrant&password=pwd1" target="_blank">https://hcm8preview.sapsf.com/login?company=QAATMBPM8TEST&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC10</span></td>
+                  <td><span class="label label-info">QAATMBPM10</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://performancemanager10.successfactors.com/login?company=QAATMBPM10" target="_blank"><span class="label label-primary">https://performancemanager10.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">DC10</span></td>
+                  <td><a href="https://performancemanager10.successfactors.com/login?company=QAATMBPM10&username=cgrant&password=pwd1" target="_blank">https://performancemanager10.successfactors.com/login?company=QAATMBPM10&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC12</span></td>
+                  <td><span class="label label-info">QAATMBPM12</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://performancemanager5.successfactors.eu/login?company=QAATMBPM12" target="_blank"><span class="label label-primary">https://performancemanager5.successfactors.eu/login</span></a></td>
+                  <td><span class="label label-success">DC12</span></td>
+                  <td><a href="https://performancemanager5.successfactors.eu/login?company=QAATMBPM12&username=cgrant&password=pwd1" target="_blank">https://performancemanager5.successfactors.eu/login?company=QAATMBPM12&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC12 BOSCH</span></td>
+                  <td><span class="label label-info">QAATMBPMBOSCH</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://performancemanagerrot.successfactors.eu/login?company=QAATMBPMBOSCH" target="_blank"><span class="label label-primary">https://performancemanagerrot.successfactors.eu/login</span></a></td>
+                  <td><span class="label label-success">DC12TEST</span></td>
+                  <td><a href="https://performancemanagerrot.successfactors.eu/login?company=QAATMBPMBOSCH&username=cgrant&password=pwd1" target="_blank">https://performancemanagerrot.successfactors.eu/login?company=QAATMBPMBOSCH&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC15</span></td>
+                  <td><span class="label label-info">QAATMBPM15</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://performancemanager15.sapsf.cn/login?company=QAATMBPM15" target="_blank"><span class="label label-primary">https://performancemanager15.sapsf.cn/login</span></a></td>
+                  <td><span class="label label-success">DC15</span></td>
+                  <td><a href="https://performancemanager15.sapsf.cn/login?company=QAATMBPM15&username=cgrant&password=pwd1" target="_blank">https://performancemanager15.sapsf.cn/login?company=QAATMBPM15&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">DC17</span></td>
+                  <td><span class="label label-info">QAATMBPM17</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://hcm17.sapsf.com/login?company=QAATMBPM17" target="_blank"><span class="label label-primary">https://hcm17.sapsf.com/login</span></a></td>
+                  <td><span class="label label-success">DC17</span></td>
+                  <td><a href="https://hcm17.sapsf.com/login?company=QAATMBPM17&username=cgrant&password=pwd1" target="_blank">https://hcm17.sapsf.com/login?company=QAATMBPM17&username=cgrant&password=pwd1</a></td>
+                </tr>
+              </tbody>
+              
+              <!-- QAPatch instance table -->
+              
+              <tbody id="tblPatch" style=display:none>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">QAATMB01</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=QAATMB01" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=QAATMB01&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=QAATMB01&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">QAATMB02</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=QAATMB02" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=QAATMB02&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=QAATMB02&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">QAATMB03</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=QAATMB03" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=QAATMB03&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=QAATMB03&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">QAATMB04</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=QAATMB04" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=QAATMB04&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=QAATMB04&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">matPLTMB</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=matPLTMB" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=matPLTMB&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=matPLTMB&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB01</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB01" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB01&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB01&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB02</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB02" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB02&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB02&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB03</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB03" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB03&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB03&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB04</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB04" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB04&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB04&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB11</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB11" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB11&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB11&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB12</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB12" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB12&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB12&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB13</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB13" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB13&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB13&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB14</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB14" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB14&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB14&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">RW</span></td>
+                  <td><span class="label label-info">atPLTMB15</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB15" target="_blank"><span class="label label-primary">https://qapatch.successfactors.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qapatch.successfactors.com/login?company=atPLTMB15&username=cgrant&password=pwd1" target="_blank">https://qapatch.successfactors.com/login?company=atPLTMB15&username=cgrant&password=pwd1</a></td>
+                </tr>
+                
+              </tbody>
+              
+              <!-- QAPreview instance table -->
+              
+              <tbody id="tblPreview" style=display:none>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB01</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB01" target="_blank"><span class="label label-primary">https://qapatchpreview.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Hana</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB01&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB01&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB02</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB02" target="_blank"><span class="label label-primary">https://qapatchpreview.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Hana</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB02&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB02&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB03</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB03" target="_blank"><span class="label label-primary">https://qapatchpreview.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Hana</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB03&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB03&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB04</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB04" target="_blank"><span class="label label-primary">https://qapatchpreview.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Hana</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB04&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB04&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB05</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB05" target="_blank"><span class="label label-primary">https://qapatchpreview.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Hana</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB05&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.sflab.ondemand.com/login?company=matPLTMB05&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">PLTATMB01</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=PLTATMB01" target="_blank"><span class="label label-primary">https://qapatchpreview.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Hana</span></td>
+                  <td><a href="https://qapatchpreview.sflab.ondemand.com/login?company=PLTATMB01&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.sflab.ondemand.com/login?company=PLTATMB01&username=cgrant&password=pwd1</a></td>
+                </tr>
+                
+              </tbody>
+              
+              <!-- QACand instance table -->
+              
+              <tbody id="tblCand" style=display:none>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">MobileTest1</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qacand.sflab.ondemand.com/login?company=MobileTest1" target="_blank"><span class="label label-primary">https://qacand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Int2</span></td>
+                  <td><a href="https://qacand.sflab.ondemand.com/login?company=MobileTest1&username=cgrant&password=pwd" target="_blank">https://qacand.sflab.ondemand.com/login?company=MobileTest1&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">PLTATMB02</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qacand.sflab.ondemand.com/login?company=PLTATMB02" target="_blank"><span class="label label-primary">https://qacand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Int2</span></td>
+                  <td><a href="https://qacand.sflab.ondemand.com/login?company=PLTATMB02&username=cgrant&password=pwd" target="_blank">https://qacand.sflab.ondemand.com/login?company=PLTATMB02&username=cgrant&password=pwd</a></td>
+                </tr>
+                
+              </tbody>
+              
+              <!-- QARot instance table -->
+              
+              <tbody id="tblRot" style=display:none>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB01</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB01" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB01&username=cgrant&password=pwd1" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=matPLTMB01&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB02</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB02" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB02&username=cgrant&password=pwd1" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=matPLTMB02&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB03</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB03" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB03&username=cgrant&password=pwd1" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=matPLTMB03&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB04</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB04" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB04&username=cgrant&password=pwd1" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=matPLTMB04&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">matPLTMB05</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB05" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=matPLTMB05&username=cgrant&password=pwd1" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=matPLTMB05&username=cgrant&password=pwd1</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">atPLTMB02</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB02" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB02&username=cgrant&password=pwd" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=atPLTMB02&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">atPLTMB03</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB03" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB03&username=cgrant&password=pwd" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=atPLTMB03&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">atPLTMB04</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB04" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB04&username=cgrant&password=pwd" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=atPLTMB04&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">atPLTMB05</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB05" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB05&username=cgrant&password=pwd" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=atPLTMB05&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">atPLTMB06b</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB06b" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB06b&username=cgrant&password=pwd" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=atPLTMB06b&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">atPLTMB07</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB07" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB07&username=cgrant&password=pwd" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=atPLTMB07&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">atPLTMB08</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB08" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB08&username=cgrant&password=pwd" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=atPLTMB08&username=cgrant&password=pwd</a></td>
+                </tr>
+                <tr>
+                	<td><span class="label label-success">Rot</span></td>
+                  <td><span class="label label-info">atPLTMB09</span></td>
+                  <td><span class="label label-default">cgrant</span></td>
+                  <td><span class="label label-default">pwd1</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB09" target="_blank"><span class="label label-primary">https://qaautocand.sflab.ondemand.com/login</span></a></td>
+                  <td><span class="label label-success">Stage</span></td>
+                  <td><a href="https://qaautocand.sflab.ondemand.com/login?company=atPLTMB09&username=cgrant&password=pwd1" target="_blank">https://qaautocand.sflab.ondemand.com/login?company=atPLTMB09&username=cgrant&password=pwd1</a></td>
+                </tr>
+                
+              </tbody>
+              
+              <!-- Test instance table -->
+              
+              
+            </table>
+		
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <body>
+  	
+		
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/vendor/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

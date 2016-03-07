@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Mobile Automation">
+    <meta name="author" content="Allen">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Mobile Automation Downloads</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../assets/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Mobile Automation Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="../index.html">Overview</a></li>
+            <li><a href="../qa/qa_login.html">QA Environment</a></li>
+            <li><a href="../ftpviews/ftpsources.html">Videos</a></li>
+            <li class="active"><a href="downloads.html">Downloads <span class="sr-only">(current)</span></a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="../resources/resourcespage.htm">Resources</a></li>
+            <li><a href="">Scripts</a></li>
+            <li><a href="">Jenkins</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Confluence</a></li>
+            <li><a href="">Reference</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Downloads</h1>
+
+
+          <h2 class="sub-header"></h2>
+          
+          <iframe frameborder="0" marginheight="0" marginwidth="0" frameborder="0" 
+          	scrolling="auto" id="ifm" name="ifm" 
+          	 width="100%" height=900 
+          	src="http://autoarp.successfactors.com:9081/cuanto/group/Mobile+Sanity+Test">
+          	</iframe>
+          
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    var v = document.getElementById('videoPlayer');
+
+    <!-- Auto play, Half volume -->
+
+    <!-- Play, Pause -->
+    v.addEventListener('click',function(){
+        if (v.paused == false) {
+            v.pause();
+            v.height="50"
+            v.width="100"
+            v.firstChild.nodeValue = 'Play';
+        }
+        else {
+            v.play();
+            v.height="500"
+            v.width="800"
+            v.firstChild.nodeValue = 'Pause';
+        }
+    });
+    </script>
+    
+    <script language="javascript" type="text/javascript"> 
+function dyniframesize(down) { 
+var pTar = null; 
+if (document.getElementById){ 
+pTar = document.getElementById(down); 
+} 
+else{ 
+eval('pTar = ' + down + ';'); 
+} 
+if (pTar && !window.opera){ 
+//begin resizing iframe 
+pTar.style.display="block" 
+if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight){ 
+//ns6 syntax 
+pTar.height = pTar.contentDocument.body.offsetHeight +20; 
+pTar.width = pTar.contentDocument.body.scrollWidth+20; 
+} 
+else if (pTar.Document && pTar.Document.body.scrollHeight){ 
+//ie5+ syntax 
+pTar.height = pTar.Document.body.scrollHeight; 
+pTar.width = pTar.Document.body.scrollWidth; 
+} 
+} 
+} 
+</script> 
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/vendor/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

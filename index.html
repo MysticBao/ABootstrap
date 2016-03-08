@@ -116,15 +116,24 @@ $wellArray = array (
                 </tr>
               </thead>
               <tbody id="tblPdu" style=display:>
-                <tr>
-                	<td><span class="label label-success">testdc</span></td>
-                  <td><span class="label label-info">QAATMBEUSD</span></td>
-                  <td><span class="label label-default">aaaaa</span></td>
-                  <td><span class="label label-default">*</span></td>
-                  <td><a href="https://salesdemo.ayin.eu" target="_blank"><span class="label label-primary">https://salesdemo.ayin.eu/login</span></a></td>
-                  <td><span class="label label-success">DC2SD</span></td>
-                  <td><a href="https://performancemanager.ayin.eu/login" target="_blank">https://salesdemo.ayin.eu/login?company=QAATMBEUSD&username=cgrant&password=pwd1</a></td>
-                </tr>
+              
+              
+              < ?php
+				$link=mysql_connect('120.25.232.93', 'auto', '123')or die("数据库连接失败");
+				//连接数据库
+				mysql_query("set names 'utf8'"); //数据库输出编码 应该与你的数据库编码保持一致.
+
+        		mysql_select_db('autotest'); //打开数据库
+
+        		$q = "select distinct Category, Title, Description, Date, Link,picLink, FeedID from rsscontent ORDER BY Title DESC LIMIT 9";
+
+				$result=mysql_query($q);//执行查询
+				while($row=mysql_fetch_assoc($result))//将result结果集中查询结果取出一条
+				{
+ 					echo"<tr><td>".$row["Category"]."</td><td>".$row["Title"]."</td><td>".$row["Description"]."</td><td>".$row["Date"]."</td><td>".$row["Link"]."</td><td>".$row["Date"]."</td><tr>";
+ 
+				}
+				?>
               </tbody>
               
               <!-- QAPatch instance table -->

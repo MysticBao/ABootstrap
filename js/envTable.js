@@ -7,24 +7,24 @@
 function showzhihuTable()
 		{
 			document.getElementById("tbltugua").style.display="none";
-			document.getElementById("tblCand").style.display="none";
+			document.getElementById("tblstory").style.display="none";
 			document.getElementById("tblzhihu").style.display="";
 		}
-		function showCandTable()
+		function showstoryTable()
 		{
 			document.getElementById("tbltugua").style.display="none";
 			document.getElementById("tblzhihu").style.display="none";
-			document.getElementById("tblCand").style.display="";
+			document.getElementById("tblstory").style.display="";
 		}
 		function showtuguaTable()
 		{
 			document.getElementById("tblzhihu").style.display="none";
-			document.getElementById("tblCand").style.display="none";
+			document.getElementById("tblstory").style.display="none";
 			document.getElementById("tbltugua").style.display="";
 		}
 		function removeAllTable()
 		{
 			document.getElementById("tbltugua").style.display="none";
 			document.getElementById("tblzhihu").style.display="none";
-			document.getElementById("tblCand").style.display="none";
+			document.getElementById("tblstory").style.display="none";
 		}

@@ -150,7 +150,7 @@ $wellArray = array (
 						      	}
 						      	else if($i==4)
 						      	{
-						      		echo '<td width="340px" height="180px"><a href='.$row[$i].' target="_blank"><span></a>';
+						      		echo '<td width="340px" height="180px"><a href='.$row[$i].' target="_blank"><span>';
 						      	}
 						      	else
 						      	{
@@ -158,6 +158,10 @@ $wellArray = array (
 						      	}
 						        
 						        echo $row[$i];
+						        if($i==4)
+						      	{
+						      		echo '</a>';
+						      	}
 						        echo '</span></td>';
 						      }
 						      echo "</tr>";

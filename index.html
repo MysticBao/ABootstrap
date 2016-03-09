@@ -121,34 +121,42 @@ $wellArray = array (
               
               <?php
      
-    $mysql_server_name="120.25.232.93"; 
-    $mysql_username="auto"; 
-    $mysql_password="123";
-    $mysql_database="autotest";
+    						$mysql_server_name="120.25.232.93"; 
+    						$mysql_username="auto"; 
+    						$mysql_password="123";
+    						$mysql_database="autotest";
     
-    $conn=mysql_connect($mysql_server_name, $mysql_username,
+    						$conn=mysql_connect($mysql_server_name, $mysql_username,
                         $mysql_password);
     
-    mysql_query("set names 'utf8'");
-    $strsql="SELECT distinct * FROM rsscontent ORDER BY Title DESC LIMIT 9";
-    $result=mysql_db_query($mysql_database, $strsql, $conn);
-    $row=mysql_fetch_row($result);
+    						mysql_query("set names 'utf8'");
+    						$strsql="SELECT distinct * FROM rsscontent ORDER BY Title DESC LIMIT 9";
+    						$result=mysql_db_query($mysql_database, $strsql, $conn);
+    						$row=mysql_fetch_row($result);
 
-    mysql_data_seek($result, 0);
-    while ($row=mysql_fetch_row($result))
-    {
-      echo "<tr>";
-      for ($i=0; $i<mysql_num_fields($result); $i++ )
-      {
-        echo '<td>';
-        echo $row[$i];
-        echo '</td>';
-      }
-      echo "</tr>";
-    }
-    mysql_free_result($result);
-    mysql_close($conn);  
-		?>
+    						mysql_data_seek($result, 0);
+						    while ($row=mysql_fetch_row($result))
+						    {
+						      echo "<tr>";
+						      for ($i=0; $i<mysql_num_fields($result); $i++ )
+						      {
+						      	if($i==0)
+						      	{
+						      		echo '<td width="340px" height="180px"><span class="label label-success">';
+						      	}
+						      	else
+						      	{
+						      		echo '<td width="340px" height="180px"><span class="label label-info">';
+						      	}
+						        
+						        echo $row[$i];
+						        echo '</span></td>';
+						      }
+						      echo "</tr>";
+						    }
+						    mysql_free_result($result);
+						    mysql_close($conn);  
+							?>
               </tbody>
               
               

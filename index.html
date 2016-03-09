@@ -106,13 +106,14 @@ $wellArray = array (
             <table class="table table-striped" >
               <thead >
                 <tr >
-                	<th>DC</th>
-                  <th>Company</th>
-                  <th>User</th>
-                  <th>Password</th>
-                  <th>BizX URL</th>
-                  <th>MP</th>
-                  <th>Direct URL</th>
+                	<th>目录</th>
+                  <th>标题</th>
+                  <th>描述</th>
+                  <th>更新日期</th>
+                  <th>链接</th>
+                  <th>源</th>
+                  <th>ID</th>
+                  <th>图片链接</th>
                 </tr>
               </thead>
               <tbody id="tblPdu" style=display:>
@@ -139,7 +140,7 @@ $wellArray = array (
       echo "<tr>";
       for ($i=0; $i<mysql_num_fields($result); $i++ )
       {
-        echo '<td bgcolor="#00FF00">';
+        echo '<td>';
         echo $row[$i];
         echo '</td>';
       }

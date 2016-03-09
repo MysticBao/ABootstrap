@@ -9,6 +9,66 @@ $wellArray = array (
 );
 ?>
 
+<?php
+     
+	$mysql_server_name="120.25.232.93"; 
+	$mysql_username="auto"; 
+	$mysql_password="123";
+	$mysql_database="autotest";
+
+	$conn=mysql_connect($mysql_server_name, $mysql_username,
+          $mysql_password);
+
+	mysql_query("set names 'utf8'");
+	
+	function tugua()
+	{
+		$strsql="SELECT distinct * FROM rsscontent ORDER BY Title DESC LIMIT 9";
+		$result=mysql_db_query($mysql_database, $strsql, $conn);
+		$row=mysql_fetch_row($result);
+	
+		mysql_data_seek($result, 0);
+	  while ($row=mysql_fetch_row($result))
+	  {
+	    echo "<tr>";
+	    for ($i=0; $i<mysql_num_fields($result); $i++ )
+	    {
+	    	if($i==0)
+	    	{
+	    		echo '<td width="340px" height="180px"><span class="label label-success">';
+	    	}
+	    	else if($i==1)
+	    	{
+	    		echo '<td height="180px"><span class="label label-info">';
+	    	}
+	    	else if($i==2)
+	    	{
+	    		echo '<td width="340px" height="180px"><span>';
+	    	}
+	    	else if($i==4)
+	    	{
+	    		echo '<td width="340px" height="180px"><a href='.$row[$i].' target="_blank"><span>';
+	    	}
+	    	else
+	    	{
+	    		echo '<td height="180px"><span class="label label-default">';
+	    	}
+	      
+	      echo $row[$i];
+	      if($i==4)
+	    	{
+	    		echo '</a>';
+	    	}
+	      echo '</span></td>';
+	    }
+	    echo "</tr>";
+  }
+  mysql_free_result($result);
+  mysql_close($conn);  
+	}
+	
+?>
+
 <html lang="en">
   <head>
   	<head>
@@ -96,7 +156,7 @@ $wellArray = array (
             	<button type="button" class="btn btn-danger  id="rotTable_id" onClick="showRotTable()">QAAutocandRot</button>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-            	<button type="button" class="btn btn-info" id="productionTable_id" onClick="showPduTable()">Procution ENV</button>
+            	<button type="button" class="btn btn-info" id="productionTable_id" onClick="showPduTable()">图卦</button>
             	
             </div>
           </div>
@@ -118,61 +178,8 @@ $wellArray = array (
               </thead>
               <tbody id="tblPdu" style=display:>
               
+              <?php tugua() ?>
               
-              <?php
-     
-    						$mysql_server_name="120.25.232.93"; 
-    						$mysql_username="auto"; 
-    						$mysql_password="123";
-    						$mysql_database="autotest";
-    
-    						$conn=mysql_connect($mysql_server_name, $mysql_username,
-                        $mysql_password);
-    
-    						mysql_query("set names 'utf8'");
-    						$strsql="SELECT distinct * FROM rsscontent ORDER BY Title DESC LIMIT 9";
-    						$result=mysql_db_query($mysql_database, $strsql, $conn);
-    						$row=mysql_fetch_row($result);
-
-    						mysql_data_seek($result, 0);
-						    while ($row=mysql_fetch_row($result))
-						    {
-						      echo "<tr>";
-						      for ($i=0; $i<mysql_num_fields($result); $i++ )
-						      {
-						      	if($i==0)
-						      	{
-						      		echo '<td width="340px" height="180px"><span class="label label-success">';
-						      	}
-						      	else if($i==1)
-						      	{
-						      		echo '<td height="180px"><span class="label label-info">';
-						      	}
-						      	else if($i==2)
-						      	{
-						      		echo '<td width="340px" height="180px"><span>';
-						      	}
-						      	else if($i==4)
-						      	{
-						      		echo '<td width="340px" height="180px"><a href='.$row[$i].' target="_blank"><span>';
-						      	}
-						      	else
-						      	{
-						      		echo '<td height="180px"><span class="label label-default">';
-						      	}
-						        
-						        echo $row[$i];
-						        if($i==4)
-						      	{
-						      		echo '</a>';
-						      	}
-						        echo '</span></td>';
-						      }
-						      echo "</tr>";
-						    }
-						    mysql_free_result($result);
-						    mysql_close($conn);  
-							?>
               </tbody>
               
               

@@ -90,13 +90,13 @@ $wellArray = array (
               
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-            	<button type="button" class="btn btn-primary  id="patchTable_id" onClick="showPatchTable()">QAPatch</button>
+            	<button type="button" class="btn btn-primary  id="zhihuTable_id" onClick="showzhihuTable()">Zhihu</button>
             	<button type="button" class="btn btn-success  id="candTable_id" onClick="showCandTable()">QACand</button>
-            	<button type="button" class="btn btn-warning  id="previewTable_id" onClick="showPreviewTable()">QAPatchPreview</button>
+            	<button type="button" class="btn btn-warning  id="previewTable_id" onClick="showPreviewTable()">QAzhihuPreview</button>
             	<button type="button" class="btn btn-danger  id="rotTable_id" onClick="showRotTable()">QAAutocandRot</button>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-            	<button type="button" class="btn btn-info" id="productionTable_id" onClick="showPduTable()">图卦</button>
+            	<button type="button" class="btn btn-info" id="productionTable_id" onClick="showtuguaTable()">图卦</button>
             	
             </div>
           </div>
@@ -116,7 +116,7 @@ $wellArray = array (
                   <th>图片链接</th>
                 </tr>
               </thead>
-              <tbody id="tblPdu" style=display:>
+              <tbody id="tbltugua" style=display:>
               
               
               <?php
@@ -176,133 +176,61 @@ $wellArray = array (
               </tbody>
               
               
-              <tbody id="tblPatch" style=display:none>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">QAATMB01</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=QAATMB01" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=QAATMB01&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=QAATMB01&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">QAATMB02</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=QAATMB02" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=QAATMB02&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=QAATMB02&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">QAATMB03</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=QAATMB03" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=QAATMB03&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=QAATMB03&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">QAATMB04</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=QAATMB04" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=QAATMB04&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=QAATMB04&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">matPLTMB</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=matPLTMB" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=matPLTMB&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=matPLTMB&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB01</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB01" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB01&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB01&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB02</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB02" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB02&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB02&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB03</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB03" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB03&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB03&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB04</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB04" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB04&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB04&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB11</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB11" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB11&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB11&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB12</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB12" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB12&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB12&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB13</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB13" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB13&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB13&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB14</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB14" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB14&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB14&username=cgrant&password=pwd1</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">RW</span></td>
-                  <td><span class="label label-info">atPLTMB15</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB15" target="_blank"><span class="label label-primary">https://qapatch.ayin.com/login</span></a></td>
-                  <td><span class="label label-success">Stage</span></td>
-                  <td><a href="https://qapatch.ayin.com/login?company=atPLTMB15&username=cgrant&password=pwd1" target="_blank">https://qapatch.ayin.com/login?company=atPLTMB15&username=cgrant&password=pwd1</a></td>
-                </tr>
+              <tbody id="tblzhihu" style=display:none>
+                <?php
+     
+    						$mysql_server_name="120.25.232.93"; 
+    						$mysql_username="auto"; 
+    						$mysql_password="123";
+    						$mysql_database="autotest";
+    
+    						$conn=mysql_connect($mysql_server_name, $mysql_username,
+                        $mysql_password);
+    
+    						mysql_query("set names 'utf8'");
+    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=2 ORDER BY Title DESC LIMIT 9";
+    						$result=mysql_db_query($mysql_database, $strsql, $conn);
+    						$row=mysql_fetch_row($result);
+
+    						mysql_data_seek($result, 0);
+						    while ($row=mysql_fetch_row($result))
+						    {
+						      echo "<tr>";
+						      for ($i=0; $i<mysql_num_fields($result); $i++ )
+						      {
+						      	if($i==0)
+						      	{
+						      		echo '<td width="340px" height="180px"><span class="label label-success">';
+						      	}
+						      	else if($i==1)
+						      	{
+						      		echo '<td height="180px"><span class="label label-info">';
+						      	}
+						      	else if($i==2)
+						      	{
+						      		echo '<td width="340px" height="180px"><span>';
+						      	}
+						      	else if($i==4)
+						      	{
+						      		echo '<td width="340px" height="180px"><a href='.$row[$i].' target="_blank"><span>';
+						      	}
+						      	else
+						      	{
+						      		echo '<td height="180px"><span class="label label-default">';
+						      	}
+						        
+						        echo $row[$i];
+						        if($i==4)
+						      	{
+						      		echo '</a>';
+						      	}
+						        echo '</span></td>';
+						      }
+						      echo "</tr>";
+						    }
+						    mysql_free_result($result);
+						    mysql_close($conn);  
+							?>
                 
               </tbody>
               
@@ -314,54 +242,54 @@ $wellArray = array (
                   <td><span class="label label-info">matPLTMB01</span></td>
                   <td><span class="label label-default">cgrant</span></td>
                   <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB01" target="_blank"><span class="label label-primary">https://qapatchpreview.ayin.ondemand.com/login</span></a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB01" target="_blank"><span class="label label-primary">https://qapatchpreview.ayin.ondemand.com/login</span></a></td>
                   <td><span class="label label-success">Hana</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB01&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB01&username=cgrant&password=pwd1</a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB01&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB01&username=cgrant&password=pwd1</a></td>
                 </tr>
                 <tr>
                 	<td><span class="label label-success">Rot</span></td>
                   <td><span class="label label-info">matPLTMB02</span></td>
                   <td><span class="label label-default">cgrant</span></td>
                   <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB02" target="_blank"><span class="label label-primary">https://qapatchpreview.ayin.ondemand.com/login</span></a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB02" target="_blank"><span class="label label-primary">https://qazhihupreview.ayin.ondemand.com/login</span></a></td>
                   <td><span class="label label-success">Hana</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB02&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB02&username=cgrant&password=pwd1</a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB02&username=cgrant&password=pwd1" target="_blank">https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB02&username=cgrant&password=pwd1</a></td>
                 </tr>
                 <tr>
                 	<td><span class="label label-success">Rot</span></td>
                   <td><span class="label label-info">matPLTMB03</span></td>
                   <td><span class="label label-default">cgrant</span></td>
                   <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB03" target="_blank"><span class="label label-primary">https://qapatchpreview.ayin.ondemand.com/login</span></a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB03" target="_blank"><span class="label label-primary">https://qazhihupreview.ayin.ondemand.com/login</span></a></td>
                   <td><span class="label label-success">Hana</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB03&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB03&username=cgrant&password=pwd1</a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB03&username=cgrant&password=pwd1" target="_blank">https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB03&username=cgrant&password=pwd1</a></td>
                 </tr>
                 <tr>
                 	<td><span class="label label-success">Rot</span></td>
                   <td><span class="label label-info">matPLTMB04</span></td>
                   <td><span class="label label-default">cgrant</span></td>
                   <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB04" target="_blank"><span class="label label-primary">https://qapatchpreview.ayin.ondemand.com/login</span></a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB04" target="_blank"><span class="label label-primary">https://qazhihupreview.ayin.ondemand.com/login</span></a></td>
                   <td><span class="label label-success">Hana</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB04&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB04&username=cgrant&password=pwd1</a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB04&username=cgrant&password=pwd1" target="_blank">https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB04&username=cgrant&password=pwd1</a></td>
                 </tr>
                 <tr>
                 	<td><span class="label label-success">Rot</span></td>
                   <td><span class="label label-info">matPLTMB05</span></td>
                   <td><span class="label label-default">cgrant</span></td>
                   <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB05" target="_blank"><span class="label label-primary">https://qapatchpreview.ayin.ondemand.com/login</span></a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB05" target="_blank"><span class="label label-primary">https://qazhihupreview.ayin.ondemand.com/login</span></a></td>
                   <td><span class="label label-success">Hana</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB05&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.ayin.ondemand.com/login?company=matPLTMB05&username=cgrant&password=pwd1</a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB05&username=cgrant&password=pwd1" target="_blank">https://qazhihupreview.ayin.ondemand.com/login?company=matPLTMB05&username=cgrant&password=pwd1</a></td>
                 </tr>
                 <tr>
                 	<td><span class="label label-success">Rot</span></td>
                   <td><span class="label label-info">PLTATMB01</span></td>
                   <td><span class="label label-default">cgrant</span></td>
                   <td><span class="label label-default">pwd1</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=PLTATMB01" target="_blank"><span class="label label-primary">https://qapatchpreview.ayin.ondemand.com/login</span></a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=PLTATMB01" target="_blank"><span class="label label-primary">https://qazhihupreview.ayin.ondemand.com/login</span></a></td>
                   <td><span class="label label-success">Hana</span></td>
-                  <td><a href="https://qapatchpreview.ayin.ondemand.com/login?company=PLTATMB01&username=cgrant&password=pwd1" target="_blank">https://qapatchpreview.ayin.ondemand.com/login?company=PLTATMB01&username=cgrant&password=pwd1</a></td>
+                  <td><a href="https://qazhihupreview.ayin.ondemand.com/login?company=PLTATMB01&username=cgrant&password=pwd1" target="_blank">https://qazhihupreview.ayin.ondemand.com/login?company=PLTATMB01&username=cgrant&password=pwd1</a></td>
                 </tr>
                 
               </tbody>

@@ -4,50 +4,50 @@
  * Copyright (c) 2014 Bryan Braun; Licensed MIT
  */
 
-function showPatchTable()
+function showzhihuTable()
 		{
-			document.getElementById("tblPdu").style.display="none";
+			document.getElementById("tbltugua").style.display="none";
 			document.getElementById("tblPreview").style.display="none";
 			document.getElementById("tblCand").style.display="none";
 			document.getElementById("tblRot").style.display="none";
-			document.getElementById("tblPatch").style.display="";
+			document.getElementById("tblzhihu").style.display="";
 		}
 		function showPreviewTable()
 		{
-			document.getElementById("tblPdu").style.display="none";
-			document.getElementById("tblPatch").style.display="none";
+			document.getElementById("tbltugua").style.display="none";
+			document.getElementById("tblzhihu").style.display="none";
 			document.getElementById("tblCand").style.display="none";
 			document.getElementById("tblRot").style.display="none";
 			document.getElementById("tblPreview").style.display="";
 		}
 		function showCandTable()
 		{
-			document.getElementById("tblPdu").style.display="none";
-			document.getElementById("tblPatch").style.display="none";
+			document.getElementById("tbltugua").style.display="none";
+			document.getElementById("tblzhihu").style.display="none";
 			document.getElementById("tblPreview").style.display="none";
 			document.getElementById("tblRot").style.display="none";
 			document.getElementById("tblCand").style.display="";
 		}
 		function showRotTable()
 		{
-			document.getElementById("tblPdu").style.display="none";
-			document.getElementById("tblPatch").style.display="none";
+			document.getElementById("tbltugua").style.display="none";
+			document.getElementById("tblzhihu").style.display="none";
 			document.getElementById("tblPreview").style.display="none";
 			document.getElementById("tblCand").style.display="none";
 			document.getElementById("tblRot").style.display="";
 		}
-		function showPduTable()
+		function showtuguaTable()
 		{
-			document.getElementById("tblPatch").style.display="none";
+			document.getElementById("tblzhihu").style.display="none";
 			document.getElementById("tblPreview").style.display="none";
 			document.getElementById("tblCand").style.display="none";
 			document.getElementById("tblRot").style.display="none";
-			document.getElementById("tblPdu").style.display="";
+			document.getElementById("tbltugua").style.display="";
 		}
 		function removeAllTable()
 		{
-			document.getElementById("tblPdu").style.display="none";
-			document.getElementById("tblPatch").style.display="none";
+			document.getElementById("tbltugua").style.display="none";
+			document.getElementById("tblzhihu").style.display="none";
 			document.getElementById("tblPreview").style.display="none";
 			document.getElementById("tblCand").style.display="none";
 			document.getElementById("tblRot").style.display="none";

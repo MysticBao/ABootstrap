@@ -9,12 +9,15 @@ $wellArray = array (
 );
 
 $mysql_server_name="120.25.232.93"; 
-    						$mysql_username="auto"; 
-    						$mysql_password="123";
-    						$mysql_database="autotest";
-    						$conn=mysql_connect($mysql_server_name, $mysql_username,
-                        $mysql_password);
-    						mysql_query("set names 'utf8'");
+$mysql_username="auto"; 
+$mysql_password="123";
+$mysql_database="autotest";
+$tuguafeedid="1";
+$zhihufeedid="2";
+$storyfeedid="3";
+$conn=mysql_connect($mysql_server_name, $mysql_username,
+        $mysql_password);
+mysql_query("set names 'utf8'");
 ?>
 
 <html lang="en">
@@ -127,7 +130,7 @@ $mysql_server_name="120.25.232.93";
               
               
               <?php
-    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=1 ORDER BY Title DESC LIMIT 9";
+    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=".$tuguafeedid." ORDER BY Title DESC LIMIT 9";
     						$result=mysql_db_query($mysql_database, $strsql, $conn);
     						$row=mysql_fetch_row($result);
 
@@ -175,7 +178,7 @@ $mysql_server_name="120.25.232.93";
               
               <tbody id="tblzhihu" style=display:none>
                 <?php
-    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=2 ORDER BY Title DESC LIMIT 9";
+    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=".$zhihufeedid." ORDER BY Title DESC LIMIT 9";
     						$result=mysql_db_query($mysql_database, $strsql, $conn);
     						$row=mysql_fetch_row($result);
 
@@ -227,7 +230,7 @@ $mysql_server_name="120.25.232.93";
               
               <tbody id="tblstory" style=display:none>
                 <?php
-    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=3 ORDER BY Title DESC LIMIT 9";
+    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=".$storyfeedid." ORDER BY Title DESC LIMIT 9";
     						$result=mysql_db_query($mysql_database, $strsql, $conn);
     						$row=mysql_fetch_row($result);
 
@@ -284,9 +287,9 @@ $mysql_server_name="120.25.232.93";
     <body>
   	
   	<?php
-mysql_free_result($result);
-						    mysql_close($conn);  
-?>
+				mysql_free_result($result);
+				mysql_close($conn);  
+		?>
 		
     <!-- Bootstrap core JavaScript
     ================================================== -->

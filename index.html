@@ -120,27 +120,20 @@ $wellArray = array (
               
               <?php
      
-    $mysql_server_name="120.25.232.93"; //数据库服务器名称
-    $mysql_username="auto"; // 连接数据库用户名
-    $mysql_password="123"; // 连接数据库密码
-    $mysql_database="autotest"; // 数据库的名字
+    $mysql_server_name="120.25.232.93"; 
+    $mysql_username="auto"; 
+    $mysql_password="123";
+    $mysql_database="autotest";
     
-    // 连接到数据库
     $conn=mysql_connect($mysql_server_name, $mysql_username,
                         $mysql_password);
     
     mysql_query("set names 'utf8'");
-                        
-     // 从表中提取信息的sql语句
     $strsql="SELECT distinct * FROM rsscontent ORDER BY Title DESC LIMIT 9";
-    // 执行sql查询
     $result=mysql_db_query($mysql_database, $strsql, $conn);
-    // 获取查询结果
     $row=mysql_fetch_row($result);
 
-    // 定位到第一条记录
     mysql_data_seek($result, 0);
-    // 循环取出记录
     while ($row=mysql_fetch_row($result))
     {
       echo "<tr></b>";
@@ -157,7 +150,6 @@ $wellArray = array (
 		?>
               </tbody>
               
-              <!-- QAPatch instance table -->
               
               <tbody id="tblPatch" style=display:none>
                 <tr>

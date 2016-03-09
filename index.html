@@ -7,6 +7,11 @@ $wellArray = array (
 'Bootstrap is an amazing development tool to use with PHP',
 'With bootstrap you can quickly code and design beautiful websites'
 );
+
+$mysql_server_name="120.25.232.93"; 
+    						$mysql_username="auto"; 
+    						$mysql_password="123";
+    						$mysql_database="autotest";
 ?>
 
 <html lang="en">
@@ -238,24 +243,57 @@ $wellArray = array (
               <!-- QACand instance table -->
               
               <tbody id="tblstory" style=display:none>
-                <tr>
-                	<td><span class="label label-success">Rot</span></td>
-                  <td><span class="label label-info">MobileTest1</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd</span></td>
-                  <td><a href="https://qacand.ayin.ondemand.com/login?company=MobileTest1" target="_blank"><span class="label label-primary">https://qacand.ayin.ondemand.com/login</span></a></td>
-                  <td><span class="label label-success">Int2</span></td>
-                  <td><a href="https://qacand.ayin.ondemand.com/login?company=MobileTest1&username=cgrant&password=pwd" target="_blank">https://qacand.ayin.ondemand.com/login?company=MobileTest1&username=cgrant&password=pwd</a></td>
-                </tr>
-                <tr>
-                	<td><span class="label label-success">Rot</span></td>
-                  <td><span class="label label-info">PLTATMB02</span></td>
-                  <td><span class="label label-default">cgrant</span></td>
-                  <td><span class="label label-default">pwd</span></td>
-                  <td><a href="https://qacand.ayin.ondemand.com/login?company=PLTATMB02" target="_blank"><span class="label label-primary">https://qacand.ayin.ondemand.com/login</span></a></td>
-                  <td><span class="label label-success">Int2</span></td>
-                  <td><a href="https://qacand.ayin.ondemand.com/login?company=PLTATMB02&username=cgrant&password=pwd" target="_blank">https://qacand.ayin.ondemand.com/login?company=PLTATMB02&username=cgrant&password=pwd</a></td>
-                </tr>
+                <?php
+     
+    						
+    
+    						$conn=mysql_connect($mysql_server_name, $mysql_username,
+                        $mysql_password);
+    
+    						mysql_query("set names 'utf8'");
+    						$strsql="SELECT distinct * FROM rsscontent WHERE FeedID=3 ORDER BY Title DESC LIMIT 9";
+    						$result=mysql_db_query($mysql_database, $strsql, $conn);
+    						$row=mysql_fetch_row($result);
+
+    						mysql_data_seek($result, 0);
+						    while ($row=mysql_fetch_row($result))
+						    {
+						      echo "<tr>";
+						      for ($i=0; $i<mysql_num_fields($result); $i++ )
+						      {
+						      	if($i==0)
+						      	{
+						      		echo '<td width="340px" height="180px"><span class="label label-success">';
+						      	}
+						      	else if($i==1)
+						      	{
+						      		echo '<td height="180px"><span class="label label-info">';
+						      	}
+						      	else if($i==2)
+						      	{
+						      		echo '<td width="340px" height="180px"><span>';
+						      	}
+						      	else if($i==4)
+						      	{
+						      		echo '<td width="340px" height="180px"><a href='.$row[$i].' target="_blank"><span>';
+						      	}
+						      	else
+						      	{
+						      		echo '<td height="180px"><span class="label label-default">';
+						      	}
+						        
+						        echo $row[$i];
+						        if($i==4)
+						      	{
+						      		echo '</a>';
+						      	}
+						        echo '</span></td>';
+						      }
+						      echo "</tr>";
+						    }
+						    mysql_free_result($result);
+						    mysql_close($conn);  
+							?>
                 
               </tbody>
               
